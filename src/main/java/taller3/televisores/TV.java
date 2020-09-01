@@ -27,8 +27,10 @@ public class TV {
 	public void setVolumen(int vol) {
 		volumen=vol;
 	}
-	public void setCanal(int can) {
-		canal=can;
+	public void setCanal(int c) {
+		if((getEstado()==true)&&c<=120&&c>=1) {
+			canal=c;
+		}
 	}
 	public void turnOn() {
 		estado=true;

@@ -38,6 +38,8 @@ public class Control {
 		}
 	}
 	public void setCanal(int c) {
-		tv.setCanal(c);
+		if((tv.getEstado()==true)&&c<=120&&c>=1) {
+			tv.setCanal(c);
+		}
 	}
 }
