@@ -2,30 +2,28 @@ package taller3.televisores;
 
 public class TestTV {
 	public static void main(String[] args) {
-		Marca marca =  new Marca("Semsung");
-		TV tv1 =  new TV(marca, true);
+		Marca marca1 = new Marca("Semsung");
+	    Marca marca2 = new Marca("Lj");
 		
-		tv1.setCanal(100);
-		tv1.canalDown();
+	    TV tv1 = new TV(marca1, true);
+	    TV tv2 = new TV(marca2, false);
+	    
+	    tv1.setPrecio(2000);
+	    tv2.setCanal(90);
+	    tv1.setCanal(121);
+		tv2.setVolumen(7);
 		
-		TV tv2 =  new TV(marca, false);
-		Control control =  new Control();
-		control.enlazar(tv2);
-		control.setCanal(50);
-		control.turnOn();
-		control.canalUp();
+		Control control1 = new Control();
+		control1.enlazar(tv1);
+		control1.turnOff();
+		control1.setCanal(50);
+		control1.turnOn();
+		control1.canalUp();
+		control1.volumenUp();
 		
-		TV tv3 =  new TV(marca, false);
-		tv2.setCanal(121);
-		
-		boolean ok = false;
-		
-		if(tv1.getCanal() == 99 && tv2.getCanal() == 2 && tv3.getCanal() == 1) {
-			ok = true;
-		}
-	    System.out.println(ok);
-	     System.out.println(tv1.getCanal());
-	     System.out.println(tv2.getCanal());
-	     System.out.println(tv3.getCanal());
+	    System.out.println(tv2.getCanal());
+	    System.out.println(tv1.getPrecio());
+	    System.out.println(tv1.getMarca().getNombre());
+	    System.out.println(tv1.getCanal());
 	}
 }
